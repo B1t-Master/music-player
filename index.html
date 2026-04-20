@@ -16,15 +16,15 @@
     <script defer src="index.js"></script>
   </head>
   <body>
-    
-    </div>
-    <div class="upload-container p-3 text-center">
-      <label
-        for="audioUpload"
-        class="form-label text-secondary small fw-bold text-uppercase"
-        >Upload Your Audio</label
-      >
-      <div class="input-group">
+    <div
+      class="container d-flex flex-column align-items-center justify-content-center vh-100"
+    >
+      <div class="upload-container p-3 text-center mb-4">
+        <label
+          for="audioUpload"
+          class="form-label text-secondary small fw-bold text-uppercase"
+          >Upload Your Audio</label
+        >
         <input
           type="file"
           class="form-control bg-dark text-secondary border-secondary"
@@ -33,23 +33,63 @@
         />
       </div>
 
-  <div class="player-container d-flex flex-column align-items-center justify-content-center mt-4">
-  <div class="music-card p-4">
-    <figure class="text-center mb-0">
-      <figcaption class=" small fw-bold text-uppercase mb-3">Currently Playing</figcaption>
-      <div class="audio-image mb-4 shadow-lg">
-          <img src="assets/audio-image.webp" alt="Audio Image" class="img-fluid rounded" />
+      <div class="music-card p-4 shadow-lg">
+        <div class="audio-image mb-4">
+          <img
+            src="assets/audio-image.webp"
+            alt="Album Art"
+            class="img-fluid rounded"
+          />
         </div>
-        <div class="audio-title mb-3">
-            <h2 class="h4 mb-0 fw-bold">Audio Title</h2>
-        </div>
-    </figure>
-    <audio controls autoplay id="mainAudio"></audio>
-    </div>
-  </div>
-</div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="audio-title mb-3 text-center">
+          <h2 class="h4 mb-0 fw-bold">No Track Loaded</h2>
+        </div>
+
+        <audio id="mainAudio"></audio>
+
+        <div class="playback-slider mb-3">
+          <input
+            type="range"
+            class="form-range custom-slider"
+            id="playbackRange"
+            min="0"
+            max="100"
+            value="0"
+          />
+          <div class="d-flex justify-content-between small text-secondary mt-1">
+            <span id="currentTime">0:00</span>
+            <span id="durationTime">0:00</span>
+          </div>
+        </div>
+
+        <div
+          class="controls d-flex align-items-center justify-content-center gap-4 mb-4"
+        >
+          <i class="bi bi-rewind-fill control-icon" id="previousButton"></i>
+
+          <div
+            class="play-button bg-white text-dark d-flex align-items-center justify-content-center rounded-circle shadow"
+            id="playButton"
+          >
+            <i class="bi bi-play-fill" id="playIcon"></i>
+          </div>
+
+          <i class="bi bi-fast-forward-fill control-icon" id="nextButton"></i>
+        </div>
+
+        <div class="volume-container d-flex align-items-center gap-2">
+          <i class="bi bi-volume-up text-secondary"></i>
+          <input
+            type="range"
+            class="form-range custom-slider"
+            id="volumeRange"
+            min="0"
+            max="100"
+            value="80"
+          />
+        </div>
+      </div>
+    </div>
   </body>
 </html>
