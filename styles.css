@@ -1,0 +1,153 @@
+/*
+Josh comeau reset
+*/
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Increase line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  /* background-color: greenyellow; */
+}
+
+/* General Background */
+body {
+  background: linear-gradient(to bottom, #222222, #000000);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.music-card {
+  width: 350px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.play-button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.play-button:hover {
+  transform: scale(1.05);
+}
+
+.control-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #b3b3b3;
+}
+
+.control-icon:hover {
+  color: white;
+}
+
+.secondary-icon {
+  font-size: 1.2rem;
+  color: #1db954;
+  cursor: pointer;
+}
+
+.custom-slider {
+  height: 4px;
+  cursor: pointer;
+}
+
+.custom-slider::-webkit-slider-runnable-track {
+  background: #4d4d4d;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.custom-slider::-webkit-slider-thumb {
+  margin-top: -6px;
+  background: #1db954;
+}
+
+.time-stamps {
+  font-size: 0.75rem;
+  color: #b3b3b3;
+  margin-top: 8px;
+}
